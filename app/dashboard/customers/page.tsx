@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <div className="w-full">
       <Suspense fallback={<InvoicesTableSkeleton />}>
-        <Table />
+        {/* <Table /> */}
       </Suspense>
     </div>
   );
