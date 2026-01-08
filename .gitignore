@@ -31,6 +31,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# gemini
+.gemini
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
