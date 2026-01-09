@@ -10,6 +10,11 @@ import {
 import Link from "next/link";
 import { Button } from "@/app/ui/button";
 import { updateInvoice } from "@/app/lib/actions";
+import { useActionState } from "react";
+
+const initialState = {
+  message: "",
+};
 
 export default function EditInvoiceForm({
   invoice,
@@ -20,10 +25,11 @@ export default function EditInvoiceForm({
 }) {
   // can't pass `id` as an argument of action, use bind instead.
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
+  const [state, dispatch] = useActionState(updateInvoiceWithId, initialState);
 
   return (
     // only FormData is passed automatically
-    <form action={updateInvoiceWithId}>
+    <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
