@@ -1,4 +1,4 @@
-import Pagination from "@/components/features/invoices/pagination";
+import Pagination from "@/components/ui/pagination";
 import Search from "@/components/ui/search";
 import Table from "@/components/features/invoices/table";
 import { CreateInvoice } from "@/components/features/invoices/buttons";
