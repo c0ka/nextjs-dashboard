@@ -42,10 +42,13 @@ export type State = {
     email?: string[];
     imageUrl?: string[];
   };
-  message: string;
+  message: string | null;
 };
 
-export async function createInvoice(initialState: State, formData: FormData) {
+export async function createInvoice(
+  initialState: State,
+  formData: FormData
+): Promise<State> {
   const validatedFields = CreateInvoice.safeParse({
     customerId: formData.get("customerId"),
     amount: formData.get("amount"),
@@ -78,7 +81,10 @@ export async function createInvoice(initialState: State, formData: FormData) {
   redirect("/dashboard/invoices");
 }
 
-export async function createCustomer(initialState: State, formData: FormData) {
+export async function createCustomer(
+  initialState: State,
+  formData: FormData
+): Promise<State> {
   const validatedFields = CreateCustomer.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
@@ -113,7 +119,7 @@ export async function updateCustomer(
   id: string,
   initialState: State,
   formData: FormData
-) {
+): Promise<State> {
   const validatedFields = CreateCustomer.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
@@ -160,7 +166,7 @@ export async function updateInvoice(
   id: string,
   initialState: State,
   formData: FormData
-) {
+): Promise<State> {
   const validatedFields = UpdateInvoice.safeParse({
     customerId: formData.get("customerId"),
     amount: formData.get("amount"),
