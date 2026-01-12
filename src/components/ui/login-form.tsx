@@ -1,6 +1,6 @@
 "use client";
 
-import { lusitana } from "@/app/ui/fonts";
+import { lusitana } from "@/components/ui/fonts";
 import {
   AtSymbolIcon,
   KeyIcon,
@@ -9,7 +9,7 @@ import {
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { Button } from "./button";
 import { useActionState } from "react";
-import { authenticate } from "../lib/actions";
+import { authenticate } from "@/actions";
 import { useSearchParams } from "next/navigation";
 
 export default function LoginForm() {

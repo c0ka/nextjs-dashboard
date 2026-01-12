@@ -1,5 +1,5 @@
-import Table from "@/app/ui/customers/table";
-import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
+import Table from "@/components/features/customers/table";
+import { InvoicesTableSkeleton } from "@/components/ui/skeletons";
 import { Suspense } from "react";
 
 export default function Page() {
