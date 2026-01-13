@@ -1,9 +1,9 @@
 import {
-  BanknotesIcon,
-  ClockIcon,
-  UserGroupIcon,
-  InboxIcon,
-} from "@heroicons/react/24/outline";
+  Banknote,
+  Clock,
+  Users,
+  Inbox,
+} from "lucide-react";
 import { lusitana } from "@/styles/fonts";
 import { fetchCardData } from "@/services/data";
 import {
@@ -14,10 +14,10 @@ import {
 } from "@/components/ui/card";
 
 const iconMap = {
-  collected: BanknotesIcon,
-  customers: UserGroupIcon,
-  pending: ClockIcon,
-  invoices: InboxIcon,
+  collected: Banknote,
+  customers: Users,
+  pending: Clock,
+  invoices: Inbox,
 };
 
 export default async function CardWrapper() {

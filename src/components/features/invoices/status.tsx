@@ -1,4 +1,4 @@
-import { CheckIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { Check, Clock } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export default function InvoiceStatus({ status }: { status: string }) {
@@ -7,13 +7,13 @@ export default function InvoiceStatus({ status }: { status: string }) {
       {status === 'pending' && (
         <Badge variant="outline" className="bg-muted/50 text-muted-foreground border-transparent">
           Pending
-          <ClockIcon className="ml-1 w-4" />
+          <Clock className="ml-1 w-4" />
         </Badge>
       )}
       {status === 'paid' && (
         <Badge variant="success">
           Paid
-          <CheckIcon className="ml-1 w-4" />
+          <Check className="ml-1 w-4" />
         </Badge>
       )}
     </>

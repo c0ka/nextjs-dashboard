@@ -3,11 +3,11 @@
 import { CustomerField } from "@/types";
 import Link from "next/link";
 import {
-  CheckIcon,
-  ClockIcon,
-  CurrencyDollarIcon,
-  UserCircleIcon,
-} from "@heroicons/react/24/outline";
+  Check,
+  Clock,
+  DollarSign,
+  CircleUser,
+} from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { createInvoice, State } from "@/actions";
 import { useActionState } from "react";
@@ -49,7 +49,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                   </option>
                 ))}
               </select>
-              <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-muted-foreground" />
+              <CircleUser className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-muted-foreground" />
             </div>
             <div id="customer-error" aria-live="polite" aria-atomic="true">
               {state.errors?.customerId &&
@@ -76,7 +76,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                 className="pl-10"
                 aria-describedby="amount-error"
               />
-              <CurrencyDollarIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
+              <DollarSign className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
             </div>
             <div id="amount-error" aria-live="polite" aria-atomic="true">
               {state.errors?.amount &&
@@ -107,7 +107,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                   htmlFor="pending"
                   className="flex cursor-pointer items-center gap-1.5 rounded-full bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted/80 peer-checked:bg-primary peer-checked:text-primary-foreground"
                 >
-                  Pending <ClockIcon className="h-4 w-4" />
+                  Pending <Clock className="h-4 w-4" />
                 </Label>
               </div>
               <div className="flex items-center space-x-2">
@@ -123,7 +123,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                   htmlFor="paid"
                   className="flex cursor-pointer items-center gap-1.5 rounded-full bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted/80 peer-checked:bg-green-500 peer-checked:text-white"
                 >
-                  Paid <CheckIcon className="h-4 w-4" />
+                  Paid <Check className="h-4 w-4" />
                 </Label>
               </div>
             </div>

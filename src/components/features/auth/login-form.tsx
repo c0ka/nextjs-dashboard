@@ -2,11 +2,11 @@
 
 import { lusitana } from "@/styles/fonts";
 import {
-  AtSymbolIcon,
-  KeyIcon,
-  ExclamationCircleIcon,
-} from "@heroicons/react/24/outline";
-import { ArrowRightIcon } from "@heroicons/react/20/solid";
+  AtSign,
+  Key,
+  AlertCircle,
+  ArrowRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useActionState } from "react";
 import { authenticate } from "@/actions";
@@ -47,7 +47,7 @@ export default function LoginForm() {
                   required
                   className="pl-10"
                 />
-                <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
+                <AtSign className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
               </div>
             </div>
             <div className="mt-4">
@@ -67,13 +67,13 @@ export default function LoginForm() {
                   minLength={6}
                   className="pl-10"
                 />
-                <KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
+                <Key className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
               </div>
             </div>
           </div>
           <input type="hidden" name="redirectTo" value={callbackUrl} />
           <Button className="mt-4 w-full" aria-disabled={isPending}>
-            Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+            Log in <ArrowRight className="ml-auto h-5 w-5 text-gray-50" />
           </Button>
           <div
             className="flex h-8 items-end space-x-1"
@@ -82,7 +82,7 @@ export default function LoginForm() {
           >
             {errorMessage && (
               <>
-                <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
+                <AlertCircle className="h-5 w-5 text-red-500" />
                 <p className="text-xs text-red-500">{errorMessage}</p>
               </>
             )}

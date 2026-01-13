@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { generatePagination } from "@/lib/utils";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -114,9 +114,9 @@ function PaginationArrow({
 
   const icon =
     direction === "left" ? (
-      <ArrowLeftIcon className="w-4" />
+      <ChevronLeft className="w-4" />
     ) : (
-      <ArrowRightIcon className="w-4" />
+      <ChevronRight className="w-4" />
     );
 
   return isDisabled ? (

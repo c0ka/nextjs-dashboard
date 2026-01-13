@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import {
-  UserCircleIcon,
-  AtSymbolIcon,
-  PhotoIcon,
-} from "@heroicons/react/24/outline";
+  CircleUser,
+  AtSign,
+  Image as ImageIcon,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { createCustomer, State } from "@/actions";
 import { useActionState } from "react";
@@ -34,7 +34,7 @@ export default function Form() {
               className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               aria-describedby="name-error"
             />
-            <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+            <CircleUser className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
           </div>
           <div id="name-error" aria-live="polite" aria-atomic="true">
             {state.errors?.name &&
@@ -60,7 +60,7 @@ export default function Form() {
               className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               aria-describedby="email-error"
             />
-            <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+            <AtSign className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
           </div>
           <div id="email-error" aria-live="polite" aria-atomic="true">
             {state.errors?.email &&
@@ -86,7 +86,7 @@ export default function Form() {
               className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               aria-describedby="imageUrl-error"
             />
-            <PhotoIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+            <ImageIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
           </div>
           <div id="imageUrl-error" aria-live="polite" aria-atomic="true">
             {state.errors?.imageUrl &&
