@@ -1,13 +1,16 @@
 import Image from 'next/image';
 import { lusitana } from '@/styles/fonts';
-import Search from '@/components/ui/search';
-import {
-  CustomersTableType,
-  FormattedCustomersTable,
-} from '@/types';
-
 import { fetchFilteredCustomers } from '@/services/data';
 import { UpdateCustomer, DeleteCustomer } from '@/components/features/customers/buttons';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import { Card, CardContent } from '@/components/ui/card';
 
 export default async function CustomersTable({
   query,
@@ -19,121 +22,90 @@ export default async function CustomersTable({
   const customers = await fetchFilteredCustomers(query, currentPage);
 
   return (
-    <div className="mt-6 flow-root">
-
-        <div className="overflow-x-auto">
-          <div className="inline-block min-w-full align-middle">
-            <div className="overflow-hidden rounded-md bg-gray-50 p-2 md:pt-0">
-              <div className="md:hidden">
-                {customers?.map((customer) => (
-                  <div
-                    key={customer.id}
-                    className="mb-2 w-full rounded-md bg-white p-4"
-                  >
-                    <div className="flex items-center justify-between border-b pb-4">
-                      <div>
-                        <div className="mb-2 flex items-center">
-                          <div className="flex items-center gap-3">
-                            <Image
-                              src={customer.image_url}
-                              className="rounded-full"
-                              alt={`${customer.name}'s profile picture`}
-                              width={28}
-                              height={28}
-                            />
-                            <p>{customer.name}</p>
-                          </div>
-                        </div>
-                        <p className="text-sm text-gray-500">
-                          {customer.email}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex w-full items-center justify-between border-b py-5">
-                      <div className="flex w-1/2 flex-col">
-                        <p className="text-xs">Pending</p>
-                        <p className="font-medium">{customer.total_pending}</p>
-                      </div>
-                      <div className="flex w-1/2 flex-col">
-                        <p className="text-xs">Paid</p>
-                        <p className="font-medium">{customer.total_paid}</p>
-                      </div>
-                    </div>
-                    <div className="pt-4 text-sm flex items-center justify-between">
-                      <p>{customer.total_invoices} invoices</p>
-                      <div className="flex justify-end gap-2">
-                        <UpdateCustomer id={customer.id} />
-                        <DeleteCustomer id={customer.id} />
-                      </div>
-                    </div>
+    <div className="mt-6">
+      <div className="md:hidden">
+        {customers?.map((customer) => (
+          <Card key={customer.id} className="mb-4">
+            <CardContent className="p-4">
+              <div className="flex items-center justify-between border-b pb-4">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={customer.image_url}
+                    className="rounded-full"
+                    alt={`${customer.name}'s profile picture`}
+                    width={32}
+                    height={32}
+                  />
+                  <div>
+                    <p className="font-medium">{customer.name}</p>
+                    <p className="text-sm text-muted-foreground">{customer.email}</p>
                   </div>
-                ))}
+                </div>
               </div>
-              <table className="hidden min-w-full rounded-md text-gray-900 md:table">
-                <thead className="rounded-md bg-gray-50 text-left text-sm font-normal">
-                  <tr>
-                    <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
-                      Name
-                    </th>
-                    <th scope="col" className="px-3 py-5 font-medium">
-                      Email
-                    </th>
-                    <th scope="col" className="px-3 py-5 font-medium">
-                      Total Invoices
-                    </th>
-                    <th scope="col" className="px-3 py-5 font-medium">
-                      Total Pending
-                    </th>
-                    <th scope="col" className="px-4 py-5 font-medium">
-                      Total Paid
-                    </th>
-                    <th scope="col" className="relative py-3 pl-6 pr-3">
-                      <span className="sr-only">Edit</span>
-                    </th>
-                  </tr>
-                </thead>
+              <div className="grid grid-cols-2 gap-4 py-4 border-b">
+                <div>
+                  <p className="text-xs text-muted-foreground">Pending</p>
+                  <p className="font-medium">{customer.total_pending}</p>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Paid</p>
+                  <p className="font-medium">{customer.total_paid}</p>
+                </div>
+              </div>
+              <div className="pt-4 flex items-center justify-between">
+                <p className="text-sm">{customer.total_invoices} invoices</p>
+                <div className="flex justify-end gap-2">
+                  <UpdateCustomer id={customer.id} />
+                  <DeleteCustomer id={customer.id} />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
 
-                <tbody className="divide-y divide-gray-200 text-gray-900">
-                  {customers.map((customer) => (
-                    <tr key={customer.id} className="group">
-                      <td className="whitespace-nowrap bg-white py-5 pl-4 pr-3 text-sm text-black group-first-of-type:rounded-md group-last-of-type:rounded-md sm:pl-6">
-                        <div className="flex items-center gap-3">
-                          <Image
-                            src={customer.image_url}
-                            className="rounded-full"
-                            alt={`${customer.name}'s profile picture`}
-                            width={28}
-                            height={28}
-                          />
-                          <p>{customer.name}</p>
-                        </div>
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
-                        {customer.email}
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
-                        {customer.total_invoices}
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
-                        {customer.total_pending}
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
-                        {customer.total_paid}
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
-                        <div className="flex justify-end gap-3">
-                          <UpdateCustomer id={customer.id} />
-                          <DeleteCustomer id={customer.id} />
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-
-            </div>
-          </div>
-        </div>
+      <div className="hidden md:block overflow-hidden rounded-lg border bg-card shadow-sm">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="pl-6">Name</TableHead>
+              <TableHead>Email</TableHead>
+              <TableHead>Total Invoices</TableHead>
+              <TableHead>Total Pending</TableHead>
+              <TableHead>Total Paid</TableHead>
+              <TableHead className="text-right pr-6">Actions</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {customers.map((customer) => (
+              <TableRow key={customer.id}>
+                <TableCell className="pl-6 py-4">
+                  <div className="flex items-center gap-3">
+                    <Image
+                      src={customer.image_url}
+                      className="rounded-full"
+                      alt={`${customer.name}'s profile picture`}
+                      width={28}
+                      height={28}
+                    />
+                    <p>{customer.name}</p>
+                  </div>
+                </TableCell>
+                <TableCell>{customer.email}</TableCell>
+                <TableCell>{customer.total_invoices}</TableCell>
+                <TableCell>{customer.total_pending}</TableCell>
+                <TableCell>{customer.total_paid}</TableCell>
+                <TableCell className="text-right pr-6">
+                  <div className="flex justify-end gap-2">
+                    <UpdateCustomer id={customer.id} />
+                    <DeleteCustomer id={customer.id} />
+                  </div>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
     </div>
   );
 }
