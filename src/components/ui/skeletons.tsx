@@ -30,7 +30,7 @@ export function RevenueChartSkeleton() {
     <div className="w-full md:col-span-4">
       <Skeleton className="mb-4 h-8 w-36" />
       <div className="rounded-xl border bg-card p-4 shadow-sm">
-        <Skeleton className="h-350 w-full" />
+        <Skeleton className="h-80 w-full" />
         <div className="flex items-center pb-2 pt-6">
           <Skeleton className="h-5 w-5 rounded-full" />
           <Skeleton className="ml-2 h-4 w-20" />
@@ -123,8 +123,8 @@ export function TableRowSkeleton() {
       {/* Actions */}
       <td className="whitespace-nowrap py-3 pl-6 pr-3">
         <div className="flex justify-end gap-3">
-          <div className="h-38 w-38 rounded bg-gray-100"></div>
-          <div className="h-38 w-38 rounded bg-gray-100"></div>
+          <div className="size-9 rounded bg-gray-100"></div>
+          <div className="size-9 rounded bg-gray-100"></div>
         </div>
       </td>
     </tr>

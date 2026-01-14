@@ -37,7 +37,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
         defaultValue={searchParams.get("query")?.toString()}
         className="pl-10"
       />
-      <SearchIcon className="absolute left-3 top-1/2 h-18 w-18 -translate-y-1/2 text-gray-400 peer-focus:text-gray-900" />
+      <SearchIcon className="absolute left-3 top-1/2 size-4.5 -translate-y-1/2 text-gray-400 peer-focus:text-gray-900" />
     </div>
   );
 }

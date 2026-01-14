@@ -47,7 +47,7 @@ export default function LoginForm() {
                   required
                   className="pl-10"
                 />
-                <AtSign className="pointer-events-none absolute left-3 top-1/2 size-18 -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
+                <AtSign className="pointer-events-none absolute left-3 top-1/2 size-4.5 -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
               </div>
             </div>
             <div className="mt-4">
@@ -67,7 +67,7 @@ export default function LoginForm() {
                   minLength={6}
                   className="pl-10"
                 />
-                <Key className="pointer-events-none absolute left-3 top-1/2 size-18 -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
+                <Key className="pointer-events-none absolute left-3 top-1/2 size-4.5 -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
               </div>
             </div>
           </div>

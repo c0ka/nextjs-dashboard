@@ -58,7 +58,7 @@ export default function EditInvoiceForm({
                   </option>
                 ))}
               </select>
-              <CircleUser className="pointer-events-none absolute left-3 top-1/2 size-18 -translate-y-1/2 text-muted-foreground" />
+              <CircleUser className="pointer-events-none absolute left-3 top-1/2 size-4.5 -translate-y-1/2 text-muted-foreground" />
             </div>
             <div id="customer-error" aria-live="polite" aria-atomic="true">
               {state.errors?.customerId &&
@@ -86,7 +86,7 @@ export default function EditInvoiceForm({
                 className="pl-10"
                 aria-describedby="amount-error"
               />
-              <DollarSign className="pointer-events-none absolute left-3 top-1/2 size-18 -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
+              <DollarSign className="pointer-events-none absolute left-3 top-1/2 size-4.5 -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
             </div>
             <div id="amount-error" aria-live="polite" aria-atomic="true">
               {state.errors?.amount &&
