@@ -24,7 +24,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
   }, 500);
 
   return (
-    <div className="relative flex flex-1 flex-shrink-0">
+    <div className="relative flex flex-1 shrink-0">
       <label htmlFor="search" className="sr-only">
         Search
       </label>
@@ -37,7 +37,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
         defaultValue={searchParams.get("query")?.toString()}
         className="pl-10"
       />
-      <SearchIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-400 peer-focus:text-gray-900" />
+      <SearchIcon className="absolute left-3 top-1/2 h-18 w-18 -translate-y-1/2 text-gray-400 peer-focus:text-gray-900" />
     </div>
   );
 }
