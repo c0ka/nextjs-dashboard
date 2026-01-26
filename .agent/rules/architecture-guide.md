@@ -5,16 +5,20 @@ trigger: always_on
 # Next.js Project
 
 ## tech stack
+
 Framework: Next.js(App Router) and TypeScript
 style: Responsive layout, Tailwind CSS
 UI Component Library: shadcn/ui
+Package Manager: pnpm
 
 ## next-devtools-mcp
+
 Next.js project should be supported by next-devtools-mcp.
 When starting work on a Next.js project, automatically call the `init` tool from the next-devtools-mcp server FIRST. This establishes proper context and ensures all Next.js queries use official documentation.
 
 ## Next.js Project Structure Guideline
-```text
+
+```
 my-nextjs-app/
 ├── public/                 # Static assets (images, fonts, robots.txt)
 ├── src/
@@ -55,4 +59,13 @@ my-nextjs-app/
 ├── next.config.ts          # Next.js configuration
 ├── tailwind.config.ts      # Tailwind CSS configuration
 └── tsconfig.json           # TypeScript configuration
+```
+
+## File Naming
+
+```
+components/Button.tsx          # PascalCase for components
+hooks/useAuth.ts              # camelCase with 'use' prefix
+lib/formatDate.ts             # camelCase for utilities
+types/market.types.ts         # camelCase with .types suffix
 ```
