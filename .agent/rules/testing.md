@@ -22,3 +22,8 @@ MANDATORY workflow:
 4. Run test - it should PASS
 5. Refactor (IMPROVE)
 6. Verify coverage (80%+)
+
+## Artifact Cleanup
+
+- Always clean up generated test artifacts (e.g., 	est_results.json, coverage-summary.json) before committing.
+- Ensure .gitignore includes coverage directories and temporary test outputs.

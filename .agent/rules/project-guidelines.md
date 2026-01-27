@@ -6,9 +6,11 @@ trigger: always_on
 
 ## tech stack
 
-Framework: Next.js(App Router) and TypeScript
-style: Responsive layout, Tailwind CSS
+Frontend: Next.js(App Router), TypeScript, React
+Database: Supabase (PostgreSQL)
+Style: Responsive layout, Tailwind CSS
 UI Component Library: shadcn/ui
+Testing: Playwright (E2E), Jest, React Testing Library
 Package Manager: pnpm
 
 ## next-devtools-mcp
