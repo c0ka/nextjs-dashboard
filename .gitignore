@@ -31,11 +31,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# AI
-.gemini
-.agent
-.bk_agent
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts
