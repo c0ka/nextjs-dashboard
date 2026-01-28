@@ -31,8 +31,10 @@ yarn-error.log*
 # vercel
 .vercel
 
-# gemini
+# AI
 .gemini
+.agent
+.bk_agent
 
 # typescript
 *.tsbuildinfo
