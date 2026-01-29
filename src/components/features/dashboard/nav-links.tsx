@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  Users,
-  Home,
-  Files,
-} from "lucide-react";
+import { Users, Home, Files, Newspaper } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
@@ -19,6 +15,7 @@ const links = [
     icon: Files,
   },
   { name: "Customers", href: "/dashboard/customers", icon: Users },
+  { name: "News", href: "/dashboard/news", icon: Newspaper },
 ];
 
 export default function NavLinks() {
@@ -36,7 +33,7 @@ export default function NavLinks() {
               "flex h-12 grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-primary md:flex-none md:justify-start md:p-2 md:px-3",
               {
                 "text-primary bg-sky-100": pathname === link.href,
-              }
+              },
             )}
           >
             <LinkIcon className="w-6" />

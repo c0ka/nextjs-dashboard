@@ -1,0 +1,32 @@
+# News Management System
+
+The News Management System allows Acme administrators to publish company updates, announcements, and blog posts directly from the dashboard.
+
+## Accessing the CMS
+
+1.  Log in to the **Dashboard**.
+2.  Navigate to the **News** tab in the sidebar navigation.
+
+## Creating a Post
+
+Click the **"Create News +"** button to open the post editor. Fill in the following fields:
+
+- **Title**: The headline of your post.
+- **Slug**: The URL-friendly identifier (e.g., `q1-results-2026`).
+- **Excerpt**: A short teaser that appears on the news feed grid.
+- **Content**: The body of your post. Supports full **Markdown** and **GFM** (GitHub Flavored Markdown).
+- **Status**: Choose between `Draft` (private) and `Published` (publicly visible).
+
+## Markdown Support
+
+The editor supports a wide range of markdown features:
+
+| Feature                     | Syntax         |
+| :-------------------------- | :------------- |
+| **Bold**                    | `**text**`     |
+| _Italic_                    | `*text*`       |
+| [Links](https://google.com) | `[label](url)` |
+| `Code`                      | `` `text` ``   |
+
+> [!IMPORTANT]
+> A post will only appear at `/news` if its status is explicitly set to **Published**.

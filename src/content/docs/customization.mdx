@@ -1,0 +1,32 @@
+# Customizing the Dashboard
+
+Acme Corp's dashboard is built with **Tailwind CSS v4** and **Next.js 16**. It follows a modular design system that is easy to extend and customize.
+
+## Styling System
+
+We use **Shadcn/UI** components for the most part, with custom styles defined in `src/styles/global.css`.
+
+### Brand Colors
+
+Our primary brand color is **Acme Blue** (`#0070F3`). You can modify this and other theme variables in the CSS configuration.
+
+## Layouts
+
+The dashboard uses a nested layout structure:
+
+1.  **`src/app/layout.tsx`**: Global wrapper for fonts and analytics.
+2.  **`src/app/dashboard/layout.tsx`**: Adds the Sidebar and common dashboard container.
+
+## Adding New Sections
+
+To add a new section to the dashboard:
+
+1.  Create a new directory in `src/app/dashboard/`.
+2.  Add a `page.tsx` file for the main content.
+3.  Update `src/components/features/dashboard/nav-links.tsx` to include the new link.
+
+```bash
+# Example: Adding a "Settings" page
+mkdir src/app/dashboard/settings
+touch src/app/dashboard/settings/page.tsx
+```

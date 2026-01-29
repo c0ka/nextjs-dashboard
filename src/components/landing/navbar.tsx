@@ -20,10 +20,23 @@ export function Navbar() {
           </Link>
           <Link
             className="transition-colors hover:text-foreground/80 text-foreground/60"
+            href="/news"
+          >
+            News
+          </Link>
+          <Link
+            className="transition-colors hover:text-foreground/80 text-foreground/60"
+            href="/docs"
+          >
+            Docs
+          </Link>
+          <Link
+            className="transition-colors hover:text-foreground/80 text-foreground/60"
             href="#pricing"
           >
             Pricing
           </Link>
+
           <Link
             className="transition-colors hover:text-foreground/80 text-foreground/60"
             href="#about"

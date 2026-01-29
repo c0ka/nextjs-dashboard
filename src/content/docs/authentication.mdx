@@ -1,0 +1,34 @@
+# Dashboard Authentication
+
+Acme Dashboard uses **NextAuth.js** (Auth.js) for secure authentication. This guide explains how the system is structured and how to manage user access.
+
+## How it Works
+
+The authentication system is built on top of the **Credentials Provider**. It validates users against the `users` table in our PostgreSQL database.
+
+### Core Components
+
+- **`auth.ts`**: The main configuration file for NextAuth.
+- **`auth.config.ts`**: Defines the authorization rules and middleware behavior.
+- **`login/` route**: The public login page.
+
+## User Roles
+
+Currently, the system supports a single role for all logged-in users. However, the database schema is ready for role-based access control (RBAC).
+
+> [!TIP]
+> To add a new user to the system, you must either use the provided seed script or manually insert a hashed password into the `users` table.
+
+## Session Handling
+
+We use **Callbacks** to ensure the session object contains necessary information, such as the `user.id`.
+
+```typescript
+// src/auth.ts
+async session({ session, token }) {
+  if (token?.sub && session.user) {
+    session.user.id = token.sub;
+  }
+  return session;
+}
+```
