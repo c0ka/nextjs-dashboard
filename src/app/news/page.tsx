@@ -2,20 +2,11 @@ import Link from "next/link";
 import { fetchLatestNews } from "@/services/news";
 import { formatDateToLocal } from "@/lib/utils";
 import { lusitana } from "@/styles/fonts";
-import AcmeLogo from "@/components/ui/acme-logo";
-
 export default async function Page() {
   const latestNews = await fetchLatestNews(10);
 
   return (
     <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-20 shrink-0 items-end rounded-lg bg-primary p-4 md:h-52">
-        <Link href="/">
-          <div className="w-32 text-white md:w-40">
-            <AcmeLogo />
-          </div>
-        </Link>
-      </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
         <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-full md:px-20">
           <h1

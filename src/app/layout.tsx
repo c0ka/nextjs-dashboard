@@ -2,7 +2,7 @@ import "@/styles/global.css";
 import { inter } from "@/styles/fonts";
 import { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: {
@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
 };
 
+import { Navbar } from "@/components/landing/navbar";
+
 export default function RootLayout({
   children,
 }: {
@@ -21,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
+        <Navbar />
         {children}
         <SpeedInsights />
         <Analytics />

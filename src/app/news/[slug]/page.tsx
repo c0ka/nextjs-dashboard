@@ -3,8 +3,8 @@ import { notFound } from "next/navigation";
 import { formatDateToLocal } from "@/lib/utils";
 import { lusitana } from "@/styles/fonts";
 import Link from "next/link";
-import AcmeLogo from "@/components/ui/acme-logo";
-import { Markdown } from "@/components/mdx";
+import { MDXRemote } from "next-mdx-remote-client/rsc";
+import { components } from "@/components/mdx";
 
 export default async function Page(props: {
   params: Promise<{ slug: string }>;
@@ -18,14 +18,6 @@ export default async function Page(props: {
 
   return (
     <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-20 shrink-0 items-end rounded-lg bg-primary p-4 md:h-24">
-        <Link href="/">
-          <div className="w-32 text-white md:w-40">
-            <AcmeLogo />
-          </div>
-        </Link>
-      </div>
-
       <div className="mt-10 mx-auto max-w-3xl w-full">
         <Link
           href="/news"
@@ -50,7 +42,7 @@ export default async function Page(props: {
         </header>
 
         <div className="mt-10">
-          <Markdown content={post.content} />
+          <MDXRemote source={post.content} components={components} />
         </div>
 
         <footer className="mt-20 border-t pt-10 mb-20">

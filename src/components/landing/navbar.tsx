@@ -14,7 +14,7 @@ export function Navbar() {
         <nav className="hidden @md:flex items-center gap-6 text-sm font-medium">
           <Link
             className="transition-colors hover:text-foreground/80 text-foreground/60"
-            href="#features"
+            href="/#features"
           >
             Features
           </Link>
@@ -32,14 +32,14 @@ export function Navbar() {
           </Link>
           <Link
             className="transition-colors hover:text-foreground/80 text-foreground/60"
-            href="#pricing"
+            href="/#pricing"
           >
             Pricing
           </Link>
 
           <Link
             className="transition-colors hover:text-foreground/80 text-foreground/60"
-            href="#about"
+            href="/#about"
           >
             About
           </Link>

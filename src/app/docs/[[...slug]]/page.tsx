@@ -1,5 +1,5 @@
 import { components } from "@/components/mdx";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { MDXRemote } from "next-mdx-remote-client/rsc";
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
@@ -83,10 +83,7 @@ export default async function Page(props: {
   return (
     <main className="flex min-h-screen flex-row">
       {/* Sidebar */}
-      <aside className="w-64 flex-none border-r bg-gray-50/50 p-6 hidden md:block overflow-y-auto">
-        <Link href="/" className="flex items-center gap-2 mb-10">
-          <AcmeLogo />
-        </Link>
+      <aside className="w-64 flex-none border-r bg-gray-50/50 p-6 hidden md:block overflow-y-auto pt-10">
         <nav>
           <NavList items={navItems} isRoot={true} />
         </nav>
@@ -94,12 +91,6 @@ export default async function Page(props: {
 
       {/* Content */}
       <div className="grow p-10 max-w-4xl mx-auto">
-        <div className="md:hidden mb-6">
-          <Link href="/">
-            <AcmeLogo />
-          </Link>
-        </div>
-
         <article className="markdown-container">
           <MDXRemote source={content} components={components} />
         </article>
