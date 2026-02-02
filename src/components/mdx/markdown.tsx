@@ -1,34 +1,11 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { codeToHtml } from "shiki";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { CodeBlock } from "./code-block";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
-}
-
-export async function CodeBlock({
-  code,
-  lang = "javascript",
-}: {
-  code: string;
-  lang?: string;
-}) {
-  const html = await codeToHtml(code, {
-    lang,
-    theme: "github-dark",
-  });
-
-  return (
-    <div
-      className="not-prose my-6 overflow-hidden rounded-lg border border-gray-800 bg-[#24292e] text-sm"
-      dangerouslySetInnerHTML={{ __html: html }}
-      style={{
-        padding: "1rem",
-      }}
-    />
-  );
 }
 
 export function Markdown({

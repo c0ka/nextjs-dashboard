@@ -4,7 +4,7 @@ import { formatDateToLocal } from "@/lib/utils";
 import { lusitana } from "@/styles/fonts";
 import Link from "next/link";
 import AcmeLogo from "@/components/ui/acme-logo";
-import { Markdown } from "@/components/ui/markdown";
+import { Markdown } from "@/components/mdx";
 
 export default async function Page(props: {
   params: Promise<{ slug: string }>;

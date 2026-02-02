@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
 };
 
 const withMdx = createMdx({
+  extension: /\.(md|mdx)$/,
   options: {
     remarkPlugins: ["remark-gfm"],
   },

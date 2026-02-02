@@ -1,9 +1,7 @@
-import { Markdown, CodeBlock } from "@/components/ui/markdown";
 import { components } from "@/components/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import fs from "fs";
 import path from "path";
-import { lusitana } from "@/styles/fonts";
 import Link from "next/link";
 import AcmeLogo from "@/components/ui/acme-logo";
 import { getDocsNav, type DocNavItem } from "@/lib/docs-nav";
@@ -68,7 +66,7 @@ export default async function Page(props: {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h1 className="text-2xl font-bold text-gray-900">
-          Documentation segment "{slug}" not found
+          Documentation segment &quot;{slug}&quot; not found
         </h1>
         <Link
           href="/docs"
@@ -95,7 +93,7 @@ export default async function Page(props: {
       </aside>
 
       {/* Content */}
-      <div className="flex-grow p-10 max-w-4xl mx-auto">
+      <div className="grow p-10 max-w-4xl mx-auto">
         <div className="md:hidden mb-6">
           <Link href="/">
             <AcmeLogo />

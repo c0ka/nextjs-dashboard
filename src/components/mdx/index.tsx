@@ -1,6 +1,9 @@
 import type { MDXComponents } from "mdx/types";
 import { lusitana } from "@/styles/fonts";
-import { CodeBlock } from "@/components/ui/markdown";
+import { CodeBlock } from "./code-block";
+import { Markdown } from "./markdown";
+
+export { CodeBlock, Markdown };
 import {
   Card,
   CardHeader,
