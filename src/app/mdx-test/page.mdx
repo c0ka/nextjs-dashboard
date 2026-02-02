@@ -1,0 +1,84 @@
+# Acme Dashboard - The Future of Finance
+
+Manage invoices, customers, and payments with ease. **Acme Dashboard** is the ultimate solution for small businesses.
+
+<Card className="my-8 bg-blue-50 border-blue-200">
+  <CardContent className="pt-6">
+    <div className="text-xl font-medium text-blue-900">
+      🚀 Special Offer: Get 3 months free when you sign up today!
+    </div>
+  </CardContent>
+</Card>
+
+## Key Features
+
+Our dashboard comes packed with powerful features designed to save you time.
+
+- **Real-time Analytics**: See your data as it happens.
+- **Secure Payments**: Process transactions with confidence.
+- **Customer Management**: Keep track of all your client details.
+
+## Feature Comparison
+
+| Feature            | Acme Dashboard | Competitor X |
+| :----------------- | :------------: | :----------: |
+| Real-time Data     |       ✅       |      ❌      |
+| Unlimited Invoices |       ✅       |      ⚠️      |
+| 24/7 Support       |       ✅       |      ❌      |
+
+## Developer Friendly
+
+Built with modern technologies for easy integration.
+
+```typescript
+// Example API Integration
+import { createInvoice } from "@acme/sdk";
+
+async function main() {
+  const invoice = await createInvoice({
+    amount: 5000,
+    currency: "USD",
+    customer: "cus_123456",
+  });
+
+  console.log("Invoice created:", invoice.id);
+}
+```
+
+## Pricing Plans
+
+<div className="grid gap-6 md:grid-cols-2">
+  <Card>
+    <CardHeader>
+      <CardTitle>Starter</CardTitle>
+      <CardDescription>Perfect for freelancers</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <div className="text-3xl font-bold">$0<span className="text-base font-normal text-gray-500">/mo</span></div>
+      <ul className="mt-4 space-y-2">
+        <li>Up to 5 customers</li>
+        <li>Basic analytics</li>
+      </ul>
+    </CardContent>
+    <CardFooter>
+      <button className="bg-primary text-white px-4 py-2 rounded-md w-full">Get Started</button>
+    </CardFooter>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>Pro</CardTitle>
+      <CardDescription>For growing businesses</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <div className="text-3xl font-bold">$29<span className="text-base font-normal text-gray-500">/mo</span></div>
+      <ul className="mt-4 space-y-2">
+        <li>Unlimited customers</li>
+        <li>Advanced analytics</li>
+      </ul>
+    </CardContent>
+    <CardFooter>
+      <button className="bg-primary text-white px-4 py-2 rounded-md w-full">Upgrade</button>
+    </CardFooter>
+  </Card>
+</div>

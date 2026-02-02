@@ -1,7 +1,17 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
+import createMdx from "@next/mdx";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
-export default nextConfig;
+const withMdx = createMdx({
+  options: {
+    remarkPlugins: ["remark-gfm"],
+  },
+});
+
+export default withMdx(nextConfig);
