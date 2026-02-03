@@ -36,5 +36,5 @@ yarn-error.log*
 next-env.d.ts
 
 # AI
-.bk_agent
-.bk_agent_antigravity_kit
+/.bk_agent
+/.bk_agent_antigravity_kit
