@@ -40,7 +40,7 @@ export default async function Page() {
             >
               {post.title}
             </h2>
-            <p className="mt-4 flex-grow text-gray-600">
+            <p className="mt-4 grow text-gray-600">
               {post.excerpt ||
                 (post.content.length > 150
                   ? post.content.substring(0, 150) + "..."

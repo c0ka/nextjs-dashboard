@@ -117,11 +117,15 @@ export async function updateNewsPost(
   redirect("/dashboard/news");
 }
 
-export async function deleteNewsPost(id: string) {
+export async function deleteNewsPost(
+  id: string,
+  formData: FormData,
+): Promise<void> {
   try {
     await sql`DELETE FROM news WHERE id = ${id}`;
     revalidatePath("/dashboard/news");
   } catch (error) {
-    return { message: "Database Error: Failed to Delete News Post." };
+    console.error("Database Error: Failed to Delete News Post.", error);
+    // Returning nothing (void) to satisfy React 19 form action requirements
   }
 }

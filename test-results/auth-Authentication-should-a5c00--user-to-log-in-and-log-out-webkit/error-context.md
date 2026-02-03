@@ -1,0 +1,58 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Acme" [ref=e4]:
+        - /url: /
+        - generic [ref=e6]:
+          - img [ref=e7]
+          - paragraph [ref=e11]: Acme
+      - navigation [ref=e12]:
+        - link "Features" [ref=e13]:
+          - /url: /#features
+        - link "News" [ref=e14]:
+          - /url: /news
+        - link "Docs" [ref=e15]:
+          - /url: /docs
+        - link "Pricing" [ref=e16]:
+          - /url: /#pricing
+        - link "About" [ref=e17]:
+          - /url: /#about
+      - generic [ref=e18]:
+        - link "Log in" [ref=e19]:
+          - /url: /login
+          - button "Log in" [ref=e20]
+        - link "Sign up" [ref=e21]:
+          - /url: /signup
+          - button "Sign up" [ref=e22]
+  - main [ref=e23]:
+    - generic [ref=e24]:
+      - generic [ref=e27]:
+        - img [ref=e28]
+        - paragraph [ref=e32]: Acme
+      - generic [ref=e35]:
+        - heading "Please log in to continue." [level=1] [ref=e36]
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - generic [ref=e39]: Email
+            - generic [ref=e40]:
+              - textbox "Email" [ref=e41]:
+                - /placeholder: Enter your email address
+                - text: user@nextmail.com
+              - img
+          - generic [ref=e42]:
+            - generic [ref=e43]: Password
+            - generic [ref=e44]:
+              - textbox "Password" [active] [ref=e45]:
+                - /placeholder: Enter password
+                - text: "123456"
+              - img
+        - button "Log in" [ref=e46]:
+          - text: Log in
+          - img
+  - button "Open Next.js Dev Tools" [ref=e53] [cursor=pointer]:
+    - img [ref=e54]
+  - alert [ref=e59]
+```

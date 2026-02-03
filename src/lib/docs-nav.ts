@@ -29,41 +29,43 @@ export function getDocsNav(
 
   const entries = fs.readdirSync(currentFullDir, { withFileTypes: true });
 
-  const nav: DocNavItem[] = entries
-    .map((entry) => {
-      const entryPath = path.join(dir, entry.name).replace(/\\/g, "/");
+  const nav: DocNavItem[] = entries.flatMap((entry): DocNavItem[] => {
+    const entryPath = path.join(dir, entry.name).replace(/\\/g, "/");
 
-      if (entry.isDirectory()) {
-        const items = getDocsNav(entryPath, baseRoute);
-        if (items.length === 0) return null;
-        return {
+    if (entry.isDirectory()) {
+      const items = getDocsNav(entryPath, baseRoute);
+      if (items.length === 0) return [];
+      return [
+        {
           title: titleCase(entry.name),
           type: "folder" as const,
           items,
-        };
-      }
+        },
+      ];
+    }
 
-      if (entry.isFile() && entry.name.endsWith(".mdx")) {
-        const fullEntryPath = path.join(process.cwd(), entryPath);
-        const relativePath = path
-          .relative(rootDocsDir, fullEntryPath)
-          .replace(/\\/g, "/");
-        const slug = relativePath.replace(/\.mdx$/, "");
+    if (entry.isFile() && entry.name.endsWith(".mdx")) {
+      const fullEntryPath = path.join(process.cwd(), entryPath);
+      const relativePath = path
+        .relative(rootDocsDir, fullEntryPath)
+        .replace(/\\/g, "/");
+      const slug = relativePath.replace(/\.mdx$/, "");
 
-        // Special case for root-level "getting-started" to be just "/docs"
-        const href =
-          slug === "getting-started" ? baseRoute : `${baseRoute}/${slug}`;
+      // Special case for root-level "getting-started" to be just "/docs"
+      const href =
+        slug === "getting-started" ? baseRoute : `${baseRoute}/${slug}`;
 
-        return {
+      return [
+        {
           title: titleCase(entry.name.replace(/\.mdx$/, "")),
           type: "file" as const,
           href,
-        };
-      }
+        },
+      ];
+    }
 
-      return null;
-    })
-    .filter((item): item is DocNavItem => item !== null);
+    return [];
+  });
 
   // Sorting: files first, then folders. Alphabetical within each.
   return nav.sort((a, b) => {
