@@ -28,7 +28,7 @@
       "@/styles/*": ["styles/*"],
       "@/components/*": ["components/*"],
       "@/lib/*": ["lib/*"],
-      "@payload-config": ["payload.config.ts"]
+      "@payload-config": ["./payload.config.ts"]
     }
   },
   "include": [
@@ -41,6 +41,7 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "archives",
   ]
 }
